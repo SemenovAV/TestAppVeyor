@@ -6,8 +6,8 @@
   "scripts": {
     "start": "webpack-dev-server --mode development",
     "build": "webpack --mode development",
-    "lint": "eslint . && linthtml . && stylelint \"**/*.css\"",
-    "jslint": "eslint .",
+    "lint": "npm run jslint && npm run lint-html && npm run stylelint",
+    "jslint": "eslint src/",
     "lint-html": "linthtml \"**/*.html\"",
     "stylelint": "stylelint \"**/*.css\"",
     "test": "jest",
@@ -69,13 +69,13 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run lint"
+      "pre-commit": "lint-staged"
     }
   },
   "lint-staged": {
-    "**/*.{js,css,md,html}": "prettier --write",
-    "**/*.js": "eslint --cache --fix",
-    "**/*.css": "stylelint --fix",
+    "**/*.{js,css,md,html}": ["npm run prettier --write","git add"],
+    "**/*.js": ["eslint --cache --fix","git add"],
+    "**/*.css": ["stylelint --fix", "git add"],
     "**/*.html": "linthtml"
   }
 }
