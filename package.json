@@ -31,6 +31,10 @@
     "url": "https://github.com/Aspirants-FS-FE/SheduliZZZer/issues"
   },
   "homepage": "https://github.com/Aspirants-FS-FE/SheduliZZZer#readme",
+  "engines": {
+    "node": ">= 14.0.0",
+    "npm": ">= 6.0.0"
+  },
   "devDependencies": {
     "@babel/cli": "^7.11.5",
     "@babel/core": "^7.11.5",
@@ -73,9 +77,9 @@
     }
   },
   "lint-staged": {
-    "**/*.{js,css,md,html}": ["npm run prettier --write","git add"],
-    "**/*.js": ["eslint --cache --fix","git add"],
-    "**/*.css": ["stylelint --fix", "git add"],
-    "**/*.html": "linthtml"
+    "**/*.{js,css,md,html}": "npm run prettier --write",
+    "**/*.js": "eslint --cache --fix",
+    "**/*.css": "stylelint --fix",
+    "**/*.html": "htmllint"
   }
 }

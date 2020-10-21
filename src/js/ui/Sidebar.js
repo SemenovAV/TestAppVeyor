@@ -13,8 +13,8 @@ export default class Sidebar {
 
   init() {
     const links = this.element.querySelectorAll('.menu-link');
-    [...links].forEach((link) => {
-      link.addEventListener('click', (event) => {
+    [...links].forEach(link => {
+      link.addEventListener('click', event => {
         const widgetClass = event.target.classList[1];
         const widgetName = event.target.textContent;
         this.widgets[widgetClass].activateWidget();
