@@ -6,7 +6,7 @@
   "scripts": {
     "start": "webpack-dev-server --mode development",
     "build": "webpack --mode development",
-    "lint": "eslint . && linthtml . && stylelint **/*.css",
+    "lint": "eslint . && linthtml .",
     "jslint": "eslint .",
     "lint-html": "linthtml **/*.html",
     "stylelint": "stylelint **/*.css",
